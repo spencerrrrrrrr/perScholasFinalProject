@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Creating a New Docker Image...') {
       steps {
-        bat 'docker build -t spencerhurrle/react-app:latest app\.'
+        bat 'docker build -t spencerhurrle/react-app:latest app/.'
       }
     }
     stage('Push Image to DockerHub...') {
