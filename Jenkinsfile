@@ -20,7 +20,6 @@ pipeline {
           bat 'terraform init -input=false'
           bat 'terraform plan -out=tfplan -input=false'
           bat 'terraform apply -input=false tfplan'
-          bat 'whoami'
         }
       }
 	}
@@ -28,7 +27,6 @@ pipeline {
 	  steps {
           //bat 'aws eks --region us-east-2 update-kubeconfig --name cluster-name'
 		  bat 'kubectl apply -f deployment.yaml'
-          bat 'terraform refresh'
 	      bat 'kubectl get all'
 		}
 	  
