@@ -20,16 +20,14 @@ pipeline {
           bat 'terraform plan -out=tfplan -input=false'
 		  bat 'terraform apply -input=false tfplan'
         }
-	  }
 	}
     stage('Deploy App to AWS EKS Cluster') {
 	  steps {
-	   {
 		  bat 'kubectl apply -f deployment.yml'
           bat 'terraform refresh'
 	      bat 'kubectl get all'
 		}
-	  }
+	  
 	}
   }
 }
