@@ -20,12 +20,13 @@ pipeline {
           bat 'terraform init -input=false'
           bat 'terraform plan -out=tfplan -input=false'
           bat 'terraform apply -input=false tfplan'
+          bat 'set cluster-name=terraform output -raw cluster_name'
         }
       }
 	}
     stage('Deploy App to AWS EKS Cluster') {
 	  steps {
-          bat 'aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)'
+          bat 'aws eks --region us-east-2 update-kubeconfig --name %cluster-name%'
 		  bat 'kubectl apply -f deployment.yml'
           bat 'terraform refresh'
 	      bat 'kubectl get all'
