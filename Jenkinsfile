@@ -29,13 +29,6 @@ pipeline {
 		  bat 'kubectl apply -f deployment.yaml'
 	      bat 'kubectl get all'
 		}
-	  
 	}
-    stage('Destroy production environment') {
-      steps {
-        dir("learn-terraform-provision-eks-cluster")
-        bat 'terraform destroy -input=false'
-      }
-    }
   }
 }
