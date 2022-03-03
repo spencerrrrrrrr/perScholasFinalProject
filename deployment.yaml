@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: webapp
+  labels:
+    app: spencer
+    type: react
+
+spec:
+  template:
+    metadata:
+      name: webapp
+      labels:
+        app: spencer
+        type: react
+    spec:
+      containers:
+      - name: spencer
+        image: spencerhurrle/react-app:latest
+        ports:
+        - containerPort: 80
+
+  replicas: 3
+  selector:
+    matchLabels:
+      app: spencer
+      type: react
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 80
+  selector:
+    app: spencer
+    type: react
