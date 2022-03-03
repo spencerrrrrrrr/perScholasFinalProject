@@ -32,3 +32,5 @@ COPY --from=builder /app/build .
 
 # Entry point when Docker container has started
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+#Changing fingerprint
