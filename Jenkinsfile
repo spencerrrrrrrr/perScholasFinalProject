@@ -31,5 +31,11 @@ pipeline {
 		}
 	  
 	}
+    stage('Destroy production environment') {
+      steps {
+        dir("learn-terraform-provision-eks-cluster")
+        bat 'terraform destroy -input=false'
+      }
+    }
   }
 }
