@@ -16,6 +16,7 @@ pipeline {
     }
     stage('Provisioning AWS Resources With Terraform...') {
 	  steps {
+          bat 'cd learn-terraform-provision-eks-cluster'
 	      bat 'terraform init -input=false'
           bat 'terraform plan -out=tfplan -input=false'
 		  bat 'terraform apply -input=false tfplan'
