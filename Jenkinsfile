@@ -15,11 +15,11 @@ pipeline {
       }
     }
     stage('Provisioning AWS Resources With Terraform...') {
-      dir("learn-terraform-provision-eks-cluster") {
-        steps {
-            bat 'terraform init -input=false'
-            bat 'terraform plan -out=tfplan -input=false'
-            bat 'terraform apply -input=false tfplan'
+      steps {
+        dir("learn-terraform-provision-eks-cluster") {
+          bat 'terraform init -input=false'
+          bat 'terraform plan -out=tfplan -input=false'
+          bat 'terraform apply -input=false tfplan'
         }
       }
 	}
