@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: spencer
-        image: spencerhurrle/react-app:latest
+        image: spencerhurrle/react-app:0.1.1
         ports:
         - containerPort: 80
 

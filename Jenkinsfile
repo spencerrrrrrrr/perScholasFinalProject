@@ -3,14 +3,14 @@ pipeline {
   stages {
     stage('Creating a New Docker Image...') {
       steps {
-        bat 'docker build -t spencerhurrle/react-app:latest app/.'
+        bat 'docker build -t spencerhurrle/react-app:0.1.1 app/.'
       }
     }
     stage('Push Image to DockerHub...') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           bat "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          bat 'docker push spencerhurrle/react-app:latest'
+          bat 'docker push spencerhurrle/react-app:0.1.1'
         }
       }
     }
