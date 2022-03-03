@@ -13,6 +13,7 @@ const technologies = [
     name: "Kubernetes",
     usage: "Deployed app instances with LoadbBalancer + rolling deployments"
   },
+  { name: "Prometheus", usage: "Monitored health of cloud environments"}
 ];
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
       <SeeTheProcess name={technologies[3].name} usage={technologies[3].usage}></SeeTheProcess>
       <SeeTheProcess name={technologies[4].name} usage={technologies[4].usage}></SeeTheProcess>
       <SeeTheProcess name={technologies[5].name} usage={technologies[5].usage}></SeeTheProcess>
+      <SeeTheProcess name={technologies[6].name} usage={technologies[6].usage}></SeeTheProcess>
     </div>
   );
 }
