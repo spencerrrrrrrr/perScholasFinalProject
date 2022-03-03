@@ -8,7 +8,7 @@ const technologies = [
   { name: "Docker", usage: "Created an image containing the app" },
   { name: "Terraform", usage: "Provisioned cloud resources" },
   { name: "AWS", usage: "Deployed my pod cluster in an AWS EC2 instance" },
-  { name: "GitLab", usage: "Automated CI/CD processes" },
+  { name: "Jenkins", usage: "Automated CI/CD processes" },
   {
     name: "Kubernetes",
     usage: "Deployed app instances with LoadbBalancer + rolling deployments"
