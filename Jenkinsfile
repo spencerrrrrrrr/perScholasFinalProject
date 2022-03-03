@@ -21,6 +21,7 @@ pipeline {
           bat 'terraform plan -out=tfplan -input=false'
           bat 'terraform apply -input=false tfplan'
           bat 'set cluster-name=terraform output -raw cluster_name'
+          bat 'whoami'
         }
       }
 	}
