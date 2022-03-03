@@ -1,5 +1,6 @@
 ## **DevOps Resources**
 ---
+
 ### **ReactJS**
 Developed my app with JavaScript's React framework.
 
@@ -32,7 +33,11 @@ Terraform was used to provision cloud resources, including EC2 instances, EKS re
 
 ### **AWS**
 AWS is the cloud environment that this project was deployed to.
+
 ---
 ## **Flowchart of the Process**
 ![Flowchart](flowchart.jpeg)
 
+---
+## **Monitoring Instance Health with Prometheus and Grafana**
+![Grafana Visualization](grafana-monitoring.png)
