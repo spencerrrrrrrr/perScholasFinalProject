@@ -25,6 +25,7 @@ pipeline {
 	}
     stage('Deploy App to AWS EKS Cluster') {
 	  steps {
+          bat 'aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)'
 		  bat 'kubectl apply -f deployment.yml'
           bat 'terraform refresh'
 	      bat 'kubectl get all'
